@@ -7,6 +7,25 @@ module.exports = function(grunt_name) {
 	grunt_name.registerTask('default', default_function);
 	grunt_name.registerTask('world', world);
 
+	grunt_name.initConfig({
+		jshint:{
+			all:[
+				'Gruntfile.js',
+				'hintlab/*.js',
+			],
+			options:{
+				jshintrc: '.jshintrc'
+			}
+		}
+	});
+	grunt_name.loadNpmTasks("grunt-contrib-jshint");
+
+	grunt_name.registerTask('jshint_lab', jshint_lab);
+	function jshint_lab(){
+		console.info('enter jshint task');
+		grunt_name.task.run('jshint');
+	}
+
 	function world() {
 		console.info('from world function');
 	}
