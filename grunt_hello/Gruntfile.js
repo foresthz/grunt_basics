@@ -1,4 +1,6 @@
 
+'use strict';
+
 module.exports = function(grunt_name) {
 	console.info('enter grunt function');
 	function default_function(){
@@ -46,7 +48,7 @@ module.exports = function(grunt_name) {
 	function hello_cat() {
 		console.info('from cat');
 		ooooops();
-		h = new Hello();
+		var h = new Hello();
 		h.sayHello('cat');
 	}
 	grunt_name.registerTask('dog', function() {
